@@ -27,35 +27,12 @@
   "paths": {
     "/product": {
       "get": {
-        "tags": ["developers"],
+        "tags": [
+          "developers"
+        ],
         "summary": "Get all products",
         "description": "Retrieve all products with optional pagination",
         "operationId": "getAllProducts",
-        "parameters": [
-          {
-            "name": "skip",
-            "in": "query",
-            "description": "Number of records to skip for pagination",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "minimum": 0,
-              "default": 0
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Maximum number of records to return",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "minimum": 1,
-              "maximum": 100,
-              "default": 50
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "List of products",
@@ -80,17 +57,49 @@
   "components": {
     "schemas": {
       "Product": {
+        "required": [
+          "createdAt",
+          "isDeleted",
+          "name",
+          "price",
+          "productId",
+          "stockQty"
+        ],
         "type": "object",
-        "required": ["productId", "name", "price", "stockQty", "createdAt", "isDeleted"],
         "properties": {
-          "productId": {"type": "integer", "example": 1},
-          "name": {"type": "string", "example": "Widget Adapter"},
-          "description": {"type": "string", "example": "High quality adapter for widgets"},
-          "price": {"type": "number", "format": "double", "example": 29.99},
-          "stockQty": {"type": "integer", "example": 100},
-          "createdAt": {"type": "string", "format": "date-time"},
-          "updatedAt": {"type": "string", "format": "date-time"},
-          "isDeleted": {"type": "boolean", "example": false}
+          "productId": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "Widget Adapter"
+          },
+          "description": {
+            "type": "string",
+            "example": "High quality adapter for widgets"
+          },
+          "price": {
+            "type": "number",
+            "format": "double",
+            "example": 29.99
+          },
+          "stockQty": {
+            "type": "integer",
+            "example": 100
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "example": false
+          }
         }
       }
     }
