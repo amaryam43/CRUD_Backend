@@ -4,8 +4,10 @@ import org.example.api.model.Product;
 import org.example.entity.ProductEntity;
 import org.example.repository.ProductRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,6 +29,6 @@ public class ProductService {
         return products.stream()
                 .map(product -> modelMapper.map(product, Product.class))
                 .collect(Collectors.toList());
-
     }
+
 }
