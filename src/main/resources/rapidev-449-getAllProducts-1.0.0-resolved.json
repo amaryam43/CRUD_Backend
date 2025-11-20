@@ -18,20 +18,10 @@
       "description": "Local server"
     }
   ],
-  "tags": [
-    {
-      "name": "developers",
-      "description": "Operations available to developers"
-    }
-  ],
   "paths": {
     "/product": {
       "get": {
-        "tags": [
-          "developers"
-        ],
         "summary": "Get all products",
-        "description": "Retrieve all products with optional pagination",
         "operationId": "getAllProducts",
         "responses": {
           "200": {
@@ -40,16 +30,105 @@
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Product"
-                  }
+                  "items": { "$ref": "#/components/schemas/Product" }
                 }
               }
             }
-          },
-          "400": {
-            "description": "Invalid input parameters"
           }
+        }
+      },
+      "post": {
+        "summary": "Create a new product",
+        "operationId": "createProduct",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Product" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Product created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Product" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/{id}": {
+      "get": {
+        "summary": "Get product by ID",
+        "operationId": "getProductById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product found",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Product" }
+              }
+            }
+          },
+          "404": { "description": "Not found" }
+        }
+      },
+      "put": {
+        "summary": "Update a product",
+        "operationId": "updateProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Product" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated product",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Product" }
+              }
+            }
+          },
+          "404": { "description": "Not found" }
+        }
+      },
+      "delete": {
+        "summary": "Delete a product",
+        "operationId": "deleteProduct",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "format": "int64" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Deleted" },
+          "404": { "description": "Not found" }
         }
       }
     }
@@ -58,48 +137,27 @@
     "schemas": {
       "Product": {
         "required": [
-          "createdAt",
-          "isDeleted",
+          "productId",
           "name",
           "price",
-          "productId",
-          "stockQty"
+          "stockQty",
+          "createdAt",
+          "isDeleted"
         ],
         "type": "object",
         "properties": {
           "productId": {
             "type": "integer",
+            "format": "int64",
             "example": 1
           },
-          "name": {
-            "type": "string",
-            "example": "Widget Adapter"
-          },
-          "description": {
-            "type": "string",
-            "example": "High quality adapter for widgets"
-          },
-          "price": {
-            "type": "number",
-            "format": "double",
-            "example": 29.99
-          },
-          "stockQty": {
-            "type": "integer",
-            "example": 100
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isDeleted": {
-            "type": "boolean",
-            "example": false
-          }
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "price": { "type": "number", "format": "double" },
+          "stockQty": { "type": "integer" },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": "string", "format": "date-time" },
+          "isDeleted": { "type": "boolean" }
         }
       }
     }

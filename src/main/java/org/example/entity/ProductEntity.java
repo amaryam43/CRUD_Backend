@@ -8,11 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "products",
-        indexes = {
-                @Index(name = "idx_products_name", columnList = "name"),
-                @Index(name = "idx_products_not_deleted", columnList = "is_deleted")
-        })
+@Table(name = "products")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,7 +18,7 @@ public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
-    private Integer productId;
+    private Long productId;
 
     @Column(nullable = false, length = 150)
     private String name;
