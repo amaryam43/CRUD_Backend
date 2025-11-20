@@ -28,12 +28,12 @@ A simple and extensible CRUD backend built with Spring Boot 3, using Liquibase f
 
 ## 📂 Project Structure 
 
-src/ --- <br>
-└── main/ --- <br>
-├── java/... --- <br>
-├── resources/ --- <br>
-│ ├── db/changelog/ (Liquibase changelogs) --- <br>
-│ └── application.properties--- <br>
+src/  <br>
+└── main/  <br>
+├── java/...  <br>
+├── resources/  <br>
+│ ├── db/changelog/ (Liquibase changelogs)  <br>
+│ └── application.properties <br>
 
 --- 
 
@@ -66,4 +66,5 @@ Once the app is running, open: http://localhost:8080/swagger-ui.html or: http://
 Use Swagger UI to test APIs and view request/response schemas. 
 
 ---
+
 
