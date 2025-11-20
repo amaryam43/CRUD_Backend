@@ -28,12 +28,12 @@ A simple and extensible CRUD backend built with Spring Boot 3, using Liquibase f
 
 ## 📂 Project Structure 
 
-src/ --- 
-└── main/ --- 
-├── java/... --- 
-├── resources/ --- 
-│ ├── db/changelog/ (Liquibase changelogs) --- 
-│ └── application.properties--- 
+src/ --- <br>
+└── main/ --- <br>
+├── java/... --- <br>
+├── resources/ --- <br>
+│ ├── db/changelog/ (Liquibase changelogs) --- <br>
+│ └── application.properties--- <br>
 
 --- 
 
@@ -45,9 +45,12 @@ src/ ---
 
 Update: src/main/resources/application.properties with your PostgreSQL settings: 
 
-spring.datasource.url=jdbc:postgresql://localhost:5432/crud_db 
+spring.datasource.url=jdbc:postgresql://localhost:5432/crud_db
+
 spring.datasource.username=YOUR_USERNAME 
+
 spring.datasource.password=YOUR_PASSWORD 
+
 spring.liquibase.change-log=classpath:db/changelog/db.changelog-master.yaml 
 
 --- 
@@ -63,3 +66,4 @@ Once the app is running, open: http://localhost:8080/swagger-ui.html or: http://
 Use Swagger UI to test APIs and view request/response schemas. 
 
 ---
+
