@@ -46,7 +46,7 @@ public class SecurityConfig {
         configuration.setAllowedHeaders(Arrays.asList("*"));
 
         // Allow credentials
-        configuration.setAllowCredentials(false);
+        configuration.setAllowCredentials(true);
 
         // Expose headers
         configuration.setExposedHeaders(Arrays.asList("Authorization"));
