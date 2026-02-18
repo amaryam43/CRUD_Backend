@@ -26,6 +26,7 @@ public class SecurityConfig {
                         ).permitAll()
                         .anyRequest().permitAll()
                 );
+
         return http.build();
     }
 
@@ -45,7 +46,7 @@ public class SecurityConfig {
         configuration.setAllowedHeaders(Arrays.asList("*"));
 
         // Allow credentials
-        configuration.setAllowCredentials(true);
+        configuration.setAllowCredentials(false);
 
         // Expose headers
         configuration.setExposedHeaders(Arrays.asList("Authorization"));
