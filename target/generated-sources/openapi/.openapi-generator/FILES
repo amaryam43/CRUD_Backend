@@ -1,0 +1,6 @@
+.openapi-generator-ignore
+README.md
+pom.xml
+src/main/java/org/example/api/controller/ApiUtil.java
+src/main/java/org/example/api/controller/ProductApi.java
+src/main/java/org/example/api/model/Product.java

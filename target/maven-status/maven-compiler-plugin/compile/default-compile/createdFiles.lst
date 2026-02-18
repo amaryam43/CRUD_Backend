@@ -1,0 +1,11 @@
+org\example\api\model\Product.class
+org\example\config\ModelMapperConfig.class
+org\example\controller\Controller.class
+org\example\entity\ProductEntity.class
+org\example\repository\ProductRepository.class
+org\example\api\controller\ProductApi.class
+org\example\Main.class
+org\example\api\controller\ApiUtil.class
+org\example\config\SecurityConfig.class
+org\example\service\ProductService.class
+org\example\entity\ProductEntity$ProductEntityBuilder.class
