@@ -6,10 +6,20 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/>
+    </parent>
+
     <groupId>org.example</groupId>
     <artifactId>CRUD_Backend</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>vm-dashboard</name>
+    <packaging>jar</packaging>
+
+    <name>CRUD_BACKEND</name>
+    <description>Spring Boot application</description>
 
     <properties>
         <java.version>17</java.version>
